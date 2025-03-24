@@ -1,0 +1,27 @@
+name: Check Branch Name
+
+on:
+  push:
+    branches-ignore:
+      - main
+
+jobs:
+  validate-branch-name:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Fail if branch name is invalid
+        run: |
+          if [[ "$GITHUB_EVENT_NAME" == "push" ]]; then
+            BRANCH_NAME="${GITHUB_REF#refs/heads/}"
+          else
+            BRANCH_NAME="${GITHUB_HEAD_REF}"
+          fi
+
+          echo "Branch name: $BRANCH_NAME"
+
+          if [[ ! "$BRANCH_NAME" =~ ^feature\/[a-z0-9-]+$ ]]; then
+            echo "Error: Wrong branch name. Expected format: feature/xxx."
+            exit 1
+          fi
+          echo "Branch name is valid."
