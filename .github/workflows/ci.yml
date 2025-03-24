@@ -1,4 +1,4 @@
-name: CI - Feature Branch Validation
+name: CI Pipeline
 
 on:
   push:
@@ -6,7 +6,7 @@ on:
       - 'feature/**'
 
 jobs:
-  validate:
+  check:
     runs-on: ubuntu-latest
 
     steps:
