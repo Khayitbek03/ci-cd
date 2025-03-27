@@ -8,7 +8,6 @@
 
 @use 'style/base/base';
 @use 'style/base/fonts';
-@use 'style/base/typography';
 @use 'style/base/helpers';
 
 @use 'style/layout/header';
@@ -24,7 +23,6 @@
 @use 'style/components/filters/range';
 @use 'style/components/filters/check';
 
-@use 'style/pages/home';
 @use 'style/pages/cart-page';
 @use 'style/pages/error-page';
 @use 'style/pages/product-page';
