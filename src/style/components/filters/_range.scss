@@ -1,8 +1,8 @@
-@use "../../abstracts/mixins";
-@use "../../abstracts/variables";
+@use '../../abstracts/mixins';
+@use '../../abstracts/variables';
 
 .range {
-  width: 100%;
+  width: 240px;
 
   &__value {
     width: 100%;
@@ -27,14 +27,14 @@
 
   &__range-input {
     position: relative;
-
+    display: flex;
+    gap: 12px;
     input {
       position: absolute;
-      width: 100%;
+      width: 240px;
       height: 6px;
-      top: -6px;
+      bottom: 1px;
       background: none;
-      pointer-events: none;
       appearance: none;
       -webkit-appearance: none;
     }
